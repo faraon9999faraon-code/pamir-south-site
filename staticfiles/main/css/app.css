@@ -1,0 +1,315 @@
+body {
+   display: flex;
+   background-color: #f5f6fa;
+   margin: 0;
+   padding: 0;
+}
+
+/* Кнопка */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #1e272e;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    background: #1e272e;
+    position: fixed;
+    left: -270px;
+    top: 0;
+    transition: 0.3s;
+    z-index: 999;
+    padding-left: 20px;
+}
+
+/* Скрытое состояние */
+.sidebar.active {
+    left: 0;
+}
+
+/* Контент */
+main {
+    margin-left: 0;
+    transition: 0.3s;
+    width: 100%;
+}
+
+
+
+/* Логотип */
+.sidebar img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.logo {
+    display: block;
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #498DA3;
+}
+
+/* Навигация */
+.sidebar h3 {
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: #d2dae2;
+}
+
+.sidebar ul {list-style: none}
+
+.sidebar ul li {
+    color: #d2dae2;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 16px;
+    transition: transform .6s ease;
+}
+
+.sidebar ul li:hover, .sidebar ul a:hover {
+    color: #498DA3;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+/* -------- FIX ЗДЕСЬ -------- */
+
+.features {
+    padding-top: 30px;
+    padding: 30px;
+    width: 100%;
+    position: relative;
+}
+
+/*  убрал кривые сдвиги */
+.features h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+}
+
+.features p {
+    padding-top: 30px;
+    font-size: 25px;
+    color: #555;
+}
+
+.main-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 0; /*  убрал -10 */
+}
+
+/* Контент */
+main .Cont {
+    text-align: center;
+    padding: 40px;
+    min-height: 100vh; /*  добавил */
+}
+
+main .Cont h2 {
+    font-size: 20px;
+    color: #fff;
+}
+
+main .Cont ul {list-style: none;}
+
+main .Cont ul li {
+     font-size: 30px;
+     margin-top: 20px;
+     padding: 10px;
+     color: #fff;
+}
+
+/*  ГЛАВНЫЙ ФИКС ФОНА */
+.Cont {
+    min-height: 100vh;
+    width: 100%;
+
+    /*  УБРАЛ margin-left: 270px; (он ломал fullscreen) */
+
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("/static/main/img/oboi-geology.jpg") no-repeat center center;
+
+    background-size: cover;
+}
+
+.soso {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.soso h1 {
+    text-align: left;
+    font-size: 30px;
+    color: #555;
+    width: 50%;
+    padding-left: 30px;
+}
+
+.soso worker {
+    width: 50%;
+    max-width: 500px;
+    padding-right: 30px;
+}
+
+.zuzu h1 {
+    font-size: 30px;
+    color: #555;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+
+
+/* СТРАНИЦА ПРО НАС*/
+.about-page {
+    padding: 40px;
+    margin-left: 270px; /* под sidebar */
+}
+
+.about-title {
+    padding-left: 230px;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.about-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.about-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    width: 50%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-image {
+    width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 25vw; /* зависит от ширины экрана */
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.about-final {
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+
+/* телефон */
+@media (max-width: 768px)
+
+/* планшет */
+@media (max-width: 1024px)
+
+/* большой экран */
+@media (min-width: 1200px)
+
+
+@media (max-width: 768px) {
+
+    /* Sidebar */
+    .sidebar {
+        left: -270px;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Контент */
+    main {
+        margin-left: 0;
+    }
+
+    .about-page {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    /* Блоки */
+    .about-block {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-block.reverse {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        width: 100%;
+    }
+
+    /* Картинки */
+    .about-image img {
+        height: 200px;
+    }
+
+    /* Заголовки */
+    .about-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .features h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .about-page {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+}
