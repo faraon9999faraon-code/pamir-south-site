@@ -1,1 +1,1 @@
-web: gunicorn PamirSouth.wsgi
+web: gunicorn itproger.wsgi:application
